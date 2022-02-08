@@ -15,15 +15,15 @@
     $.widget("suwala.doubleScroll", {
 		options: {
             contentElement: undefined, // Widest element, if not specified first child element will be used
-			topScrollBarMarkup: '<div class="suwala-doubleScroll-scroll-wrapper" style="height: 20px;"><div class="suwala-doubleScroll-scroll" style="height: 20px;"></div></div>',
+			topScrollBarMarkup: '<div class="suwala-doubleScroll-scroll-wrapper" style="height: 18px;"><div class="suwala-doubleScroll-scroll" style="height: 18px;"></div></div>',
 			topScrollBarInnerSelector: '.suwala-doubleScroll-scroll',			
 			scrollCss: {                
 				'overflow-x': 'scroll',
-				'overflow-y':'hidden'
+				'overflow-y':'scroll'
             },
 			contentCss: {
 				'overflow-x': 'scroll',
-				'overflow-y':'hidden'
+				'overflow-y':'scroll'
 			}
         },		
         _create : function() {
@@ -58,7 +58,7 @@
 
             // set the width of the wrappers
             $(self.options.topScrollBarInnerSelector, topScrollBar).width(contentElement[0].scrollWidth);
-            topScrollBar.width(self.element[0].clientWidth);
+            topScrollBar.width(self.element[0].width);
         },
         refresh: function(){
             // this should be called if the content of the inner element changed.
@@ -77,7 +77,7 @@
 
             // set the width of the wrappers
             $(self.options.topScrollBarInnerSelector, topScrollBar).width(contentElement[0].scrollWidth);
-            topScrollBar.width(self.element[0].clientWidth);
+            topScrollBar.width(self.element[0].width);
         }
     });
 })(jQuery);
